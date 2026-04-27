@@ -1,0 +1,171 @@
+/* ================= RESET ================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+}
+
+/* ================= LAYOUT ================= */
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.calculator {
+    width: 360px;
+    background: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.3);
+    padding: 20px;
+    animation: slideIn 0.4s ease-out;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-25px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ================= DISPLAY ================= */
+
+.display {
+    margin-bottom: 15px;
+    border-radius: 12px;
+    overflow: hidden;
+    position: relative;
+}
+
+#display {
+    width: 100%;
+    border: none;
+    background: #f4f4f4;
+    font-size: 2.4em;
+    padding: 20px;
+    text-align: right;
+    font-weight: bold;
+    color: #333;
+    outline: none;
+    border-radius: 12px;
+}
+
+/* Voice status text */
+.voice-status {
+    position: absolute;
+    bottom: 8px;
+    right: 12px;
+    font-size: 0.75em;
+    color: #667eea;
+    opacity: 0.9;
+}
+
+/* ================= BUTTON GRID ================= */
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+}
+
+/* Base Button */
+.btn {
+    padding: 16px;
+    font-size: 1.2em;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    background: #f0f0f0;
+    font-weight: bold;
+    transition: all 0.2s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    background: #e4e4e4;
+}
+
+.btn:active {
+    transform: translateY(0);
+}
+
+/* Special Buttons */
+
+.btn-clear {
+    background: #ff6b6b;
+    color: white;
+}
+
+.btn-clear:hover {
+    background: #ff5252;
+}
+
+.btn-operator {
+    background: #667eea;
+    color: white;
+}
+
+.btn-operator:hover {
+    background: #5568d3;
+}
+
+.btn-equals {
+    background: #51cf66;
+    color: white;
+    font-size: 1.3em;
+}
+
+.btn-equals:hover {
+    background: #40c057;
+}
+
+.btn-special {
+    background: #ffa94d;
+    color: white;
+}
+
+.btn-special:hover {
+    background: #ff922b;
+}
+
+/* Span 2 columns */
+.full-width {
+    grid-column: span 2;
+}
+
+/* ================= MOBILE RESPONSIVE ================= */
+
+@media (max-width: 480px) {
+    .calculator {
+        width: 95%;
+        max-width: 320px;
+        padding: 15px;
+    }
+
+    #display {
+        font-size: 2em;
+        padding: 15px;
+    }
+
+    .btn {
+        padding: 14px;
+        font-size: 1.1em;
+    }
+}
